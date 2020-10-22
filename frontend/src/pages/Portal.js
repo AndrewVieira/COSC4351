@@ -5,7 +5,6 @@ export default class Portal extends React.Component {
 		return (
 			<div className="login">
 				<h1>Portal Page</h1>
-				
 			</div>
 		)
 	}

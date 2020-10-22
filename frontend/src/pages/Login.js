@@ -1,5 +1,8 @@
 import React from 'react';
 
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
 export default class Login extends React.Component {
 	constructor(props) {
 		super(props);
@@ -28,13 +31,17 @@ export default class Login extends React.Component {
 		return (
 			<div className="login">
 				<h1>Login Page</h1>
-				<form>
-					<label>Username:</label><br/>
-					<input type="text"/><br/>
-					<label>Password:</label><br/>
-					<input type="password"/><br/><br/>
-					<input type="submit" value="Submit"/>
-				</form>
+				<Form>
+					<Form.Group controlId="formUsername">
+						<Form.Label>Username</Form.Label>
+						<Form.Control type="username" placeholder="Enter username"/>
+					</Form.Group>
+					<Form.Group controlId="formUsername">
+						<Form.Label>Password</Form.Label>
+						<Form.Control type="password" placeholder="Enter password"/>
+					</Form.Group>
+					<Button variant="primary" type="submit">Submit</Button>
+				</Form>
 			</div>
 		)
 	}
