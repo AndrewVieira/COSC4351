@@ -34,6 +34,14 @@ export default class SignUp extends React.Component {
 					<h1>Sign Up Page</h1>
 					<Form>
 						<Form.Group controlId="formUsername">
+							<Form.Label>First name</Form.Label>
+							<Form.Control type="username" placeholder="First name"/>
+						</Form.Group>
+						<Form.Group controlId="formUsername">
+							<Form.Label>Last name</Form.Label>
+							<Form.Control type="username" placeholder="Last name"/>
+						</Form.Group>
+						<Form.Group controlId="formUsername">
 							<Form.Label>Username</Form.Label>
 							<Form.Control type="username" placeholder="Enter username"/>
 						</Form.Group>
