@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 import Portal from './pages/Portal';
 
 function App() {
@@ -15,7 +16,10 @@ function App() {
         <Navbar.Brand href='/'>Admin Portal</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Item>
-            <Nav.Link href='/login'>Login</Nav.Link>
+            <Nav.Link href='/'>Login</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href='/signup'>Sign Up</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href='/portal'>Portal</Nav.Link>
@@ -24,8 +28,9 @@ function App() {
       </Navbar>
 
       <Switch>
-        <Route path='/login' component={Login}/>
-        <Route path='/portal' component={Portal}/>
+        <Route exact path='/' component={Login}/>
+        <Route exact path='/signup' component={SignUp}/>
+        <Route exact path='/portal' component={Portal}/>
       </Switch>
 
     </div>

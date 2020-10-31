@@ -3,7 +3,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-export default class Login extends React.Component {
+export default class SignUp extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -29,9 +29,9 @@ export default class Login extends React.Component {
 
 	render() {
 		return (
-			<div className="login">
-				<div class="container center_div w-50 align-items-center">
-					<h1>Login Page</h1>
+			<div class="container center_div w-50 padding-50">
+				<div className="signup">
+					<h1>Sign Up Page</h1>
 					<Form>
 						<Form.Group controlId="formUsername">
 							<Form.Label>Username</Form.Label>
@@ -41,7 +41,7 @@ export default class Login extends React.Component {
 							<Form.Label>Password</Form.Label>
 							<Form.Control type="password" placeholder="Enter password"/>
 						</Form.Group>
-						<Button variant="primary" type="submit">Login</Button>
+						<Button variant="primary" type="submit">Register</Button>
 					</Form>
 				</div>
 			</div>
