@@ -27,6 +27,14 @@ function App() {
         </Nav>
       </Navbar>
 
+      <Navbar bg="light" variant="light" sticky="bottom" fixed="bottom">
+        <Nav className="m-auto">
+            <div class="text-center" text-align="center" width="100%"> 
+              <p>COSC 4351 Project - By Carroll Vance, Andrew Vieira, and Jerrin Wiley</p>
+            </div>
+        </Nav>
+      </Navbar>
+
       <Switch>
         <Route exact path='/' component={Login}/>
         <Route exact path='/signup' component={SignUp}/>
