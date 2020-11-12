@@ -3,13 +3,14 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+import ErrorMessage from '../components/ErrorMessage';
+
 export default class Login extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			username: '',
 			password: '',
-			error: '',
 		}
 	}
 
@@ -22,9 +23,18 @@ export default class Login extends React.Component {
 	onSubmit = (event) => {
 		event.preventDefault();
 
-		this.setState({
-			error: '',
-		});
+		if (this.state.username==='')
+		{
+
+		}
+		else if (this.state.password==='')
+		{
+
+		}
+		else if (false) //Place holder for error from bacakend
+		{
+
+		}
 	}
 
 	render() {
