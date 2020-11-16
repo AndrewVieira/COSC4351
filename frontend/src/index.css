@@ -5,9 +5,32 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background: url(images/spikes.png) repeat center center fixed;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+
+.focus {
+
+	margin: auto;
+  background-color: #ffffff;
+  padding: 1em;
+  text-align: left;
+  border-style: solid;
+  border-color: #aaaaaa;
+  border-width: 5px;
+  border-radius: 25px;
+
+  box-shadow: 5px 10px #222222aa;
 }

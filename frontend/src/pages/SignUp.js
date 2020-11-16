@@ -29,8 +29,8 @@ export default class SignUp extends React.Component {
 
 	render() {
 		return (
-			<div className="signup">
-				<div class="container center_div w-50 padding-50">
+			<div className="signup center">
+				<div className="container center_div w-50 padding-50 focus">
 					<h1>Sign Up Page</h1>
 					<Form>
 						<Form.Group controlId="formUsername">
