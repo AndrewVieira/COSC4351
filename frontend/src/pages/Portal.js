@@ -11,33 +11,37 @@ class Portal extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			links: [["Example Link 1", "https://www.google.com/"], ["Example Link 2", "https://www.uh.edu/"], ["Example Link 3", "https://stackoverflow.com/"]],
+			links: [],
 		};
 	}
+	//links: [["Example Link 1", "https://www.google.com/"], ["Example Link 2", "https://www.uh.edu/"], ["Example Link 3", "https://stackoverflow.com/"]],
 
 	componentDidMount = async () => {
 		//Make sure we are logged in
 		//If not logged in, return to the home page
 		await this.props.isLoggedIn();
 		if (!this.props.token) {
-				this.props.history.push('/');
-			}
+			this.props.history.push('/');
+		}
 		
 
-		//Retrieve the data we need from the backend
-		/*axios.defaults.headers = {
-				'Content-Type': 'application/json',
-				Authorization: `Token ${this.props.token}`
-			};
+		//Retrieve the links from the backend
+		axios.defaults.headers = {
+			'Content-Type': 'application/json',
+			Authorization: `Token ${this.props.token}`
+		};
 
 		axios
-				.get(`http://localhost:8000/api/links`)
-				.then(res => {
-					const list = res.data[0];
-					//console.log(list)
-					this.setState({
-					});
-				});*/
+			.get(`http://localhost:8080/portal/api/links`)
+			.then(res => {
+				const list = res.data[0];
+				console.log(list)
+				this.setState({
+				});
+			})
+			.catch(err => {
+				window.alert(err);
+			});
 	}
 
 	/*onLogout = (event) => {
