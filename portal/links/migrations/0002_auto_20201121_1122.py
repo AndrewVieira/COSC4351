@@ -15,7 +15,9 @@ def init_db(apps, schema_editor):
     user_admin = User.objects.create(username='admin',
                                      email='admin@portal',
                                      password=make_password('admin'),
-                                     is_active=True)
+                                     is_active=True,
+                                     is_staff=True,
+                                     is_superuser=True)
     user_admin.groups.add(group_admin)
 
     Link.objects.create(url='http://localhost:8000/admin',
