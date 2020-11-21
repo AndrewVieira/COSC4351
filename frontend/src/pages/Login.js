@@ -35,7 +35,7 @@ class Login extends React.Component {
 			this.setState({
 				errorShow: true,
 				errorTitle: "Username Error",
-				errorBody: "Please your username!",
+				errorBody: "Please enter your username!",
 			});
 		}
 		else if (this.state.password==='')
@@ -48,6 +48,7 @@ class Login extends React.Component {
 		}
 		else
 		{
+			console.log("I tried to log in");
 			this.props.onAuth(this.state.username, this.state.password);
 		}
 		
@@ -70,6 +71,9 @@ class Login extends React.Component {
 	}
 
 	render() {
+		if (this.props.token){
+			this.props.history.push('/portal');
+		}
 		return (
 			<div className="login center">
 				<div className="container center_div w-50 align-items-center focus">

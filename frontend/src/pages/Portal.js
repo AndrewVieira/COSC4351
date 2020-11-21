@@ -18,11 +18,11 @@ class Portal extends React.Component {
 	componentDidMount = async () => {
 		//Make sure we are logged in
 		//If not logged in, return to the home page
-		/* await this.props.isLoggedIn();
+		await this.props.isLoggedIn();
 		if (!this.props.token) {
 				this.props.history.push('/');
 			}
-		*/
+		
 
 		//Retrieve the data we need from the backend
 		/*axios.defaults.headers = {
@@ -47,6 +47,7 @@ class Portal extends React.Component {
 
 	render() {
 		return (
+
 			<div className="portal center">
 				<div className="container center_div w-50 focus">
 						<h1>Portal Page</h1>
