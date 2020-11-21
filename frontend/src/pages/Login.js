@@ -5,7 +5,10 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-export default class Login extends React.Component {
+import {connect} from 'react-redux';
+import * as actions from '../store/actions/Auth';
+
+class Login extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -43,7 +46,12 @@ export default class Login extends React.Component {
 				errorBody: "Please enter your password!",
 			});
 		}
-		else if (false) //Place holder for error from bacakend
+		else
+		{
+			this.props.onAuth(this.state.username, this.state.password);
+		}
+		
+		if (false) //Place holder for error from backend
 		{
 
 		}
@@ -97,3 +105,19 @@ export default class Login extends React.Component {
 		)
 	}
 }
+
+const mapStateToProps = (state) => {
+	return {
+		token: state.token,
+		loading: state.loading,
+		error: state.error
+	}
+}
+
+const mapDispatchToProps = dispatch => {
+	return {
+		onAuth: (username, password) => dispatch(actions.authLogin(username, password))
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

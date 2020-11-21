@@ -8,14 +8,14 @@ const initialState = {
 }
 
 const authStart = (state, action) => {
-	return updateObject(state, {
+	return UpdateObject(state, {
 		error: null,
 		loading: true
 	});
 }
 
 const authSuccess = (state, action) => {
-	return updateObject(state, {
+	return UpdateObject(state, {
 		token: action.token,
 		error: null,
 		loading: false
@@ -23,14 +23,14 @@ const authSuccess = (state, action) => {
 }
 
 const authFail = async (state, action) => {
-	return await updateObject(state, {
+	return await UpdateObject(state, {
 		error: action.error,
 		loading: false
 	});
 }
 
 const authLogout = (state, action) => {
-	return updateObject(state, {
+	return UpdateObject(state, {
 		token: null
 	});
 }
