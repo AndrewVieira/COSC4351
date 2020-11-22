@@ -25,18 +25,11 @@ class App extends React.Component {
 
         <Navbar bg="primary" variant="dark">
           <Navbar.Brand href='/'>Admin Portal</Navbar.Brand>
-            <Nav className="mr-auto">
-              
-              <Nav.Item>
-                <Nav.Link href='/'>Login</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href='/portal'>Portal</Nav.Link>
-              </Nav.Item>
-            </Nav>
-
-          <Navbar.Toggle/>
-          <LogoutButton/>
+          <Nav className="ml-auto">
+          </Nav>
+          <Nav className="ml-auto">
+            <LogoutButton className="mr-auto"/>
+          </Nav>
         </Navbar>
 
         <Navbar bg="light" variant="light" sticky="bottom" fixed="bottom">
@@ -73,7 +66,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onTryAutoSignup: () => dispatch(actions.authCheckState()),
-    isLoggedIn: () => dispatch(actions.authCheckState()),
   }
 }
 

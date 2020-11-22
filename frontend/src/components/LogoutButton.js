@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 
 import * as actions from '../store/actions/Auth';
 
-function LogoutButton ({logout}) {
+function LogoutButton ({token, logout}) {
   const history = useHistory();
 
   function handleClick() {
@@ -14,12 +14,19 @@ function LogoutButton ({logout}) {
     history.push("/");
   }
 
-  return (
-      <Button type="submit" variant="light" onClick={handleClick}>
-        Log Out
-      </Button>
-  );
+  if (token){
+    return (<Button type="submit" variant="light" onClick={handleClick}>Log Out</Button>);
+  }
+  else{
+    return (null);
+  }
 }
+
+const mapStateToProps = state => {
+  return {
+    token: state.token,
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -27,4 +34,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(LogoutButton)
+export default connect(mapStateToProps, mapDispatchToProps)(LogoutButton)
