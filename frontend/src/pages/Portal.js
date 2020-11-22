@@ -14,7 +14,6 @@ class Portal extends React.Component {
 			links: [],
 		};
 	}
-	//links: [["Example Link 1", "https://www.google.com/"], ["Example Link 2", "https://www.uh.edu/"], ["Example Link 3", "https://stackoverflow.com/"]],
 
 	componentDidMount = async () => {
 		//Make sure we are logged in
@@ -23,7 +22,6 @@ class Portal extends React.Component {
 		if (!this.props.token) {
 			this.props.history.push('/');
 		}
-		
 
 		//Retrieve the links from the backend
 		axios.defaults.headers = {
@@ -34,9 +32,11 @@ class Portal extends React.Component {
 		axios
 			.get(`http://localhost:8080/portal/api/links`)
 			.then(res => {
-				const list = res.data[0];
-				console.log(list)
+				const list = res.data;
+				console.log(res.data);
+
 				this.setState({
+					links: list,
 				});
 			})
 			.catch(err => {
@@ -44,10 +44,10 @@ class Portal extends React.Component {
 			});
 	}
 
-	/*onLogout = (event) => {
+	onLogout = (event) => {
 		this.props.logout();
 		this.props.history.push('/');
-	}*/
+	}
 
 	render() {
 		return (
@@ -58,7 +58,7 @@ class Portal extends React.Component {
 						<div class="adminlinks">
 							{this.state.links.map((value,index) => {
 	                            return (
-	                            	<AdminLink key={index} name= {value[0]} link={value[1]}/>
+	                            	<AdminLink key={index} name= {value.name} link={value.url}/>
 	                            );
 	                        })}
 						</div>

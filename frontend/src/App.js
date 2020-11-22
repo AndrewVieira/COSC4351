@@ -5,24 +5,22 @@ import {connect} from 'react-redux';
 
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
 
 import Login from './pages/Login';
-import SignUp from './pages/SignUp';
 import Portal from './pages/Portal';
+
+import LogoutButton from './components/LogoutButton';
 
 import * as actions from './store/actions/Auth';
 const Hoc = props => props.children;
 
 class App extends React.Component {
-  componentDidMount() {
-    this.props.onTryAutoSignup();
+  constructor(props) {
+    super(props)
   }
 
-  onLogout = (event) => {
-    /*this.props.logout();
-    const history = useHistory();
-    history.push('/');*/
+  componentDidMount() {
+    this.props.onTryAutoSignup();
   }
 
   Main = () => {
@@ -37,15 +35,12 @@ class App extends React.Component {
                 <Nav.Link href='/'>Login</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href='/signup'>Sign Up</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
                 <Nav.Link href='/portal'>Portal</Nav.Link>
               </Nav.Item>
             </Nav>
 
           <Navbar.Toggle/>
-          <Button type="submit" variant="light" onClick={this.onLogout}>Log Out</Button>
+          <LogoutButton/>
         </Navbar>
 
         <Navbar bg="light" variant="light" sticky="bottom" fixed="bottom">
@@ -58,7 +53,6 @@ class App extends React.Component {
 
         <Hoc>
           <Route exact path='/' component={Login}/>
-          <Route exact path='/signup' component={SignUp}/>
           <Route exact path='/portal' component={Portal}/>
         </Hoc>
 

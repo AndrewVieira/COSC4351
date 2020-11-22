@@ -88,7 +88,6 @@ class Login extends React.Component {
 							<Form.Control name="password" type="password" placeholder="Enter password" value={this.state.password} onChange={this.onChange}/>
 						</Form.Group>
 						<Button variant="primary" type="submit" onClick={this.onSubmit}>Login</Button>
-						<p className="d-inline-block">&ensp;or <strong><Link to="/signup">Sign Up</Link></strong></p>
 					</Form>
 				</div>
 
