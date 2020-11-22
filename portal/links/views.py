@@ -20,7 +20,7 @@ def links(request):
         if user is None:
             return JsonResponse({'message': 'Not authenticated'}, status=511)
 
-        _links = Link.objects.filter(group_id__in=user.groups.all())
+        _links = Link.objects.filter(group_id__in=user.groups.all()).order_by('name')
         serializer = LinkSerializer(data=_links, many=True)
 
         # For some reason serializer.is_valid() is always False even if its true, but we must call it before returning

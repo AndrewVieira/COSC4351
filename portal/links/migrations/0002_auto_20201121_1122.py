@@ -21,7 +21,13 @@ def init_db(apps, schema_editor):
     user_admin.groups.add(group_admin)
 
     Link.objects.create(url='http://localhost:8080/portal/admin',
-                        name='Manage Roles',
+                        name='Manage User Accounts',
+                        group=group_admin)
+    Link.objects.create(url='http://localhost:8080/portal/admin',
+                        name='Assign Roles',
+                        group=group_admin)
+    Link.objects.create(url='https://www.zendesk.com',
+                        name='Help Desk',
                         group=group_admin)
 
     # FINANCE_ADMIN
@@ -34,10 +40,16 @@ def init_db(apps, schema_editor):
     user_finance.groups.add(group_finance)
 
     Link.objects.create(url='https://www.google.com/finance',
-                        name='Google Finance',
+                        name='Finance Reports',
                         group=group_finance)
     Link.objects.create(url='https://www.chase.com',
-                        name='Chase Bank',
+                        name='Accounts Payable',
+                        group=group_finance)
+    Link.objects.create(url='https://www.chase.com',
+                        name='Accounts Receivable',
+                        group=group_finance)
+    Link.objects.create(url='https://www.irs.gov',
+                        name='Tax',
                         group=group_finance)
 
     # SALES_ADMIN
@@ -50,7 +62,13 @@ def init_db(apps, schema_editor):
     user_sales.groups.add(group_sales)
 
     Link.objects.create(url='https://www.salesforce.com',
-                        name='Salesforce',
+                        name='Sales Reports',
+                        group=group_sales)
+    Link.objects.create(url='https://www.salesforce.com',
+                        name='Sales Leads',
+                        group=group_sales)
+    Link.objects.create(url='https://www.salesforce.com',
+                        name='Sales Demo',
                         group=group_sales)
 
     # HR_ADMIN
@@ -63,7 +81,19 @@ def init_db(apps, schema_editor):
     user_hr.groups.add(group_hr)
 
     Link.objects.create(url='https://totalsource.adp.com',
-                        name='ADP',
+                        name='New Hire On-boarding',
+                        group=group_hr)
+    Link.objects.create(url='https://totalsource.adp.com',
+                        name='Benefits',
+                        group=group_hr)
+    Link.objects.create(url='https://totalsource.adp.com',
+                        name='Payroll',
+                        group=group_hr)
+    Link.objects.create(url='https://totalsource.adp.com',
+                        name='Off-boarding',
+                        group=group_hr)
+    Link.objects.create(url='https://totalsource.adp.com',
+                        name='HR Reports',
                         group=group_hr)
 
     # TECH_ADMIN
@@ -75,11 +105,20 @@ def init_db(apps, schema_editor):
                                     is_active=True)
     user_tech.groups.add(group_tech)
 
-    Link.objects.create(url='https://www.newegg.com/',
-                        name='newegg',
+    Link.objects.create(url='https://aws.amazon.com/ecs',
+                        name='Application Monitoring',
                         group=group_tech)
-    Link.objects.create(url='https://docs.djangoproject.com/en/3.1',
-                        name='Django 3.1 Documentation',
+    Link.objects.create(url='https://www.zendesk.com',
+                        name='Tech Support',
+                        group=group_tech)
+    Link.objects.create(url='https://github.com',
+                        name='App Development',
+                        group=group_tech)
+    Link.objects.create(url='https://aws.amazon.com/ecs',
+                        name='App Admin',
+                        group=group_tech)
+    Link.objects.create(url='https://github.com',
+                        name='Release Management',
                         group=group_tech)
 
 
