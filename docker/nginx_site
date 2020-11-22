@@ -3,7 +3,7 @@ upstream django {
 }
 
 server {
-    listen      80;
+    listen      8080;
     charset     utf-8;
 
     location / {
@@ -15,7 +15,17 @@ server {
     }
 
     location /portal {
-        rewrite /portal/(.+) /portal/$1 break;
+        alias /app/portal/static/;
+    }
+
+    location /portal/api {
+        rewrite /portal/api/(.+) /portal/api/$1 break;
+        uwsgi_pass  django;
+        include     /app/uwsgi_params;
+    }
+
+    location /portal/admin {
+        rewrite /portal/admin/(.+) /portal/admin/$1 break;
         uwsgi_pass  django;
         include     /app/uwsgi_params;
     }

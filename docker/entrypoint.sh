@@ -6,6 +6,7 @@
 # Trigger migration if needed
 source /app/venv/bin/activate
 cd /app/portal
+rm /app/portal/db/db.sqlite3
 python manage.py migrate
 chown www-data:www-data -R /app/portal/db
 
@@ -23,3 +24,9 @@ uwsgi --chdir=/app/portal \
     --vacuum \
     --home=/app/venv \
     --daemonize /app/run/uwsgi.log
+
+echo "-------------------------"
+echo "Portal Startup Finished!"
+echo "Tailing nginx access log."
+
+tail -f /var/log/nginx/access.log
