@@ -20,7 +20,7 @@ def init_db(apps, schema_editor):
                                      is_superuser=True)
     user_admin.groups.add(group_admin)
 
-    Link.objects.create(url='http://localhost:8000/admin',
+    Link.objects.create(url='http://localhost:8080/admin',
                         name='Manage Roles',
                         group=group_admin)
 
