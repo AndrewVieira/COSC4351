@@ -1,4 +1,4 @@
 portal/db.sqlite3
-portal/db/
+portal/db/db.sqlite3
 .idea/
 *.pyc
