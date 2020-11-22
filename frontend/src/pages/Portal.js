@@ -46,11 +46,6 @@ class Portal extends React.Component {
 		}
 	}
 
-	onLogout = (event) => {
-		this.props.logout();
-		this.props.history.push('/');
-	}
-
 	render() {
 		return (
 			<div className="portal center">
@@ -78,7 +73,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         isLoggedIn: () => dispatch(actions.authCheckState()),
-        logout: () => dispatch(actions.logout()),
     }
 }
 

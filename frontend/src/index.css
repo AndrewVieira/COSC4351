@@ -18,11 +18,11 @@ code {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    height: 80vh;
+    padding: 1em;
 }
 
 .focus {
-
 	margin: auto;
   background-color: #ffffff;
   padding: 1em;
