@@ -15,10 +15,6 @@ import * as actions from './store/actions/Auth';
 const Hoc = props => props.children;
 
 class App extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   componentDidMount() {
     this.props.onTryAutoSignup();
   }
@@ -78,7 +74,6 @@ const mapDispatchToProps = dispatch => {
   return {
     onTryAutoSignup: () => dispatch(actions.authCheckState()),
     isLoggedIn: () => dispatch(actions.authCheckState()),
-    logout: () => dispatch(actions.logout()),
   }
 }
 

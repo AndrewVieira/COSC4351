@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -71,9 +70,9 @@ class Login extends React.Component {
 	}
 
 	render() {
-		/*if (this.props.token){
+		if (this.props.token){
 			this.props.history.push('/portal');
-		}*/
+		}
 		return (
 			<div className="login center">
 				<div className="container center_div w-50 align-items-center focus">
