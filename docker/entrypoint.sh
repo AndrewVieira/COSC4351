@@ -28,5 +28,6 @@ uwsgi --chdir=/app/portal \
 echo "-------------------------"
 echo "Portal Startup Finished!"
 echo "Tailing nginx access log."
+echo "-------------------------"
 
 tail -f /var/log/nginx/access.log
