@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'portal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db' / 'db.sqlite3',
     }
 }
 
@@ -133,7 +133,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_ROOT = ''
-STATIC_URL = '/static/'
+STATIC_URL = '/portal/static/'
 STATICFILES_DIRS = (os.path.join('static'),)
 
 CORS_ORIGIN_ALLOW_ALL = True

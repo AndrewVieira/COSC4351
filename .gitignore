@@ -1,3 +1,4 @@
 portal/db.sqlite3
+portal/db/
 .idea/
 *.pyc
