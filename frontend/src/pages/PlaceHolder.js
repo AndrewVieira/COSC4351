@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image';
 import * as actions from '../store/actions/Auth';
 
 class PlaceHolder extends React.Component {

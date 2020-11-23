@@ -47,8 +47,14 @@ class Login extends React.Component {
 		}
 		else
 		{
-			console.log("I tried to log in");
+			//console.log("I tried to log in");
 			this.props.onAuth(this.state.username, this.state.password);
+
+			if (this.props.error !== null)
+			{
+				console.log(this.props.error);
+			}
+			
 		}
 		
 		if (false) //Place holder for error from backend
