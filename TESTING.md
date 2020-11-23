@@ -1,6 +1,6 @@
 # Manual Test Plan
 
-The test plan assumes the user has deployed the solution in Docker according to the instructions in README.md. The user should then point their browser towards http://localhost:8080
+The test plan assumes the user has deployed the solution in Docker according to the instructions in README.md. The user should then point their browser towards http://localhost:8080. The tests should be run in order.
 
 ## Correct Links Test
 
@@ -98,3 +98,4 @@ The test succeeds if the admin should see the following new links:
 - Manage User Accounts
 - Release Management
 - Tech Support
+- The additional Link / Name from the Add Link Test
