@@ -56,7 +56,7 @@ export const authLogin = (username, password) => {
 		.catch(err => {
 			dispatch(authFail(err));
 			//console.log(err.response);
-			window.alert(err.response.data.non_field_errors[0]);
+			window.alert("Invalid Creditinals");
 		})
 	}
 }
