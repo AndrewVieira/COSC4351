@@ -55,8 +55,20 @@ export const authLogin = (username, password) => {
 		})
 		.catch(err => {
 			dispatch(authFail(err));
-			//console.log(err.response);
-			window.alert("Invalid Creditinals");
+			//window.alert(err);
+			//console.log("Error: " + err);
+			if (err.response !== undefined && err.response.data !== undefined && err.response.data.non_field_errors !== undefined && err.response.data.non_field_errors[0] !== undefined)
+			{
+				window.alert(err.response.data.non_field_errors[0]);
+			}
+			else if (err !== undefined)
+			{
+				window.alert(err);
+			}
+			else
+			{
+				window.alert("Error: A login error has occured");
+			}
 		})
 	}
 }

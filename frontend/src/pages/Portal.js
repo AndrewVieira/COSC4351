@@ -34,7 +34,7 @@ class Portal extends React.Component {
 				.get(`http://localhost:8080/portal/api/links`)
 				.then(res => {
 					const list = res.data;
-					console.log(res.data);
+					//console.log(res.data);
 
 					this.setState({
 						links: list,
