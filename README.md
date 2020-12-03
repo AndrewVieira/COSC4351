@@ -43,3 +43,11 @@ docker run -p 8080:8080 portal
 ```
 
 Open your web browser and got to http://localhost:8080 to see the project login page.
+
+### Default Credentials
+
+- admin : admin
+- hr : hr
+- tech : tech
+- finance : finance
+- sales : sales
